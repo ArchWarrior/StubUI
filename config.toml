@@ -1,0 +1,125 @@
+"port"="8081"
+[[services]]
+id=1
+sname="PolarisService"
+path="/PolarisService"
+	[[services.operations]]
+		opname="MultipleOutputs"
+		delay=0
+		[[services.operations.outputs]]
+		tagvalue="Standard"
+		response="""<sample>hello from createSurvey standard</sample>
+		<s>##300+300##</s>
+		<s>##(shuffle(Envelope.Body.MultipleOutputs.surveyRequest.correlationId))##</s>
+		<s>##(shuffle(Envelope.Body.MultipleOutputs.surveyRequest.correlationId))##</s>
+		<s>##(timestamp(2150405.000))##</s>
+		<s>##(timestamp(2150405.000))##</s>
+		<s>##Envelope.Body.MultipleOutputs.surveyRequest.correlationId##</s>
+		<s>##(randomNum(100,999))##</s>
+		<ip>##(randomNum(1,255))##:##(randomNum(1,255))##:##(randomNum(1,255))##:##(randomNum(1,255))##</ip>
+		<s>##(randomNum(100,999))##</s>"""
+		
+		[[services.operations.outputs]]
+		tagvalue="Hospitality"
+		response="""<sample>hello from createSurvey hospitality</sample>
+		<s>##300+300##</s>
+		<s>##(shuffle(Envelope.Body.MultipleOutputs.surveyRequest.correlationId))##</s>
+		<s>##(shuffle(Envelope.Body.MultipleOutputs.surveyRequest.correlationId))##</s>
+		<s>##(timestamp(2150405.000))##</s>
+		<s>##(timestamp(2150405.000))##</s>
+		<s>##Envelope.Body.MultipleOutputs.surveyRequest.correlationId##</s>
+		<s>##siteId##</s>
+		<s>##(randomNum(100,999))##</s>
+		<ip>##(randomNum(1,255))##:##(randomNum(1,255))##:##(randomNum(1,255))##:##(randomNum(1,255))##</ip>
+		<s>##(randomNum(100,999))##</s>"""
+		
+	[[services.operations]]
+	   #Name of the operation 
+		opname="staticOperation"
+		#delay to be introduced in the response in seconds
+		delay=1
+		#response for the operation
+		[[services.operations.outputs]]
+		tagvalue=""
+		response="""<?xml version="1.0" encoding="UTF-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+ <soap:Body>
+  <ns2:staticOperationResponse xmlns:ns2="http://xml.comcast.com/survey/services" xmlns="http://xml.comcast.com/survey/types" xmlns:ns3="http://xml.comcast.com/common/types" xmlns:ns4="http://xml.comcast.com/commercial/types" xmlns:ns5="http://xml.comcast.com/commercialcustomer/types" xmlns:ns6="http://xml.comcast.com/types" xmlns:ns7="http://xml.comcast.com/commercialtasknotification/types" xmlns:ns8="http://xml.comcast.com/commercialaccountmanagement/types">
+   <ns2:staticOperationReturn>
+    <surveyReference>
+     <surveyReference>
+      <inquiryRequestId>360 douglas dr</inquiryRequestId>
+      <correlationId>12345</correlationId>
+      <omName>POLARIS</omName>
+      <status>COMPLETED</status>
+     </surveyReference>
+    </surveyReference>
+   </ns2:staticOperationReturn>
+  </ns2:staticOperationResponse>
+ </soap:Body>
+</soap:Envelope>"""	
+
+
+
+[[services]]
+id=2
+sname="InventoryService"
+path="/InventoryService"
+	[[services.operations]]
+		opname="MultipleOutputsInventoryService"
+		delay=0
+		[[services.operations.outputs]]
+		tagvalue="Standard"
+		response="""<sample>hello from createSurvey standard</sample>
+		<s>##300+300##</s>
+		<s>##(shuffle(Envelope.Body.MultipleOutputs.surveyRequest.correlationId))##</s>
+		<s>##(shuffle(Envelope.Body.MultipleOutputs.surveyRequest.correlationId))##</s>
+		<s>##(timestamp(2150405.000))##</s>
+		<s>##(timestamp(2150405.000))##</s>
+		<s>##Envelope.Body.MultipleOutputs.surveyRequest.correlationId##</s>
+		<s>##(randomNum(100,999))##</s>
+		<ip>##(randomNum(1,255))##:##(randomNum(1,255))##:##(randomNum(1,255))##:##(randomNum(1,255))##</ip>
+		<s>##(randomNum(100,999))##</s>"""
+		
+		[[services.operations.outputs]]
+		tagvalue="Hospitality"
+		response="""<sample>hello from createSurvey hospitality</sample>
+		<s>##300+300##</s>
+		<s>##(shuffle(Envelope.Body.MultipleOutputs.surveyRequest.correlationId))##</s>
+		<s>##(shuffle(Envelope.Body.MultipleOutputs.surveyRequest.correlationId))##</s>
+		<s>##(timestamp(2150405.000))##</s>
+		<s>##(timestamp(2150405.000))##</s>
+		<s>##Envelope.Body.MultipleOutputs.surveyRequest.correlationId##</s>
+		<s>##siteId##</s>
+		<s>##(randomNum(100,999))##</s>
+		<ip>##(randomNum(1,255))##:##(randomNum(1,255))##:##(randomNum(1,255))##:##(randomNum(1,255))##</ip>
+		<s>##(randomNum(100,999))##</s>"""
+		
+	[[services.operations]]
+	   #Name of the operation 
+		opname="staticOperationInventoryService"
+		#delay to be introduced in the response in seconds
+		delay=1
+		#response for the operation
+		[[services.operations.outputs]]
+		tagvalue=""
+		response="""<?xml version="1.0" encoding="UTF-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+ <soap:Body>
+  <ns2:staticOperationResponse xmlns:ns2="http://xml.comcast.com/survey/services" xmlns="http://xml.comcast.com/survey/types" xmlns:ns3="http://xml.comcast.com/common/types" xmlns:ns4="http://xml.comcast.com/commercial/types" xmlns:ns5="http://xml.comcast.com/commercialcustomer/types" xmlns:ns6="http://xml.comcast.com/types" xmlns:ns7="http://xml.comcast.com/commercialtasknotification/types" xmlns:ns8="http://xml.comcast.com/commercialaccountmanagement/types">
+   <ns2:staticOperationReturn>
+    <surveyReference>
+     <surveyReference>
+      <inquiryRequestId>360 douglas dr</inquiryRequestId>
+      <correlationId>12345</correlationId>
+      <omName>POLARIS</omName>
+      <status>COMPLETED</status>
+     </surveyReference>
+    </surveyReference>
+   </ns2:staticOperationReturn>
+  </ns2:staticOperationResponse>
+ </soap:Body>
+</soap:Envelope>"""	
+
+   
+   

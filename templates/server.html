@@ -1,0 +1,29 @@
+<!--index.html-->
+<!--Embed the header.html template at this location-->
+{{ template "header.html" .}}
+ 
+ <script type="text/javascript">
+			$(document).ready(function() {
+				$("#startstop").on('click', function() {
+					$.ajax({
+						url: "/StartStopServer",
+						method: "GET",
+						success: function() {
+							window.location.reload();
+						},
+					});
+				});
+			});
+		</script>
+
+    <!--Create the link for the article based on its ID-->
+    
+  
+   <button type="button" class="btn btn-info" id="startstop" value="Start Server">{{.payload }}</button>
+ 
+     
+ 
+ 
+ 
+<!--Embed the footer.html template at this location-->
+{{ template "footer.html" .}}

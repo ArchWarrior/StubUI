@@ -1,0 +1,24 @@
+<!--service.html-->
+
+<!--Embed the header.html template at this location-->
+{{ template "header.html" .}}
+
+<!--Display the title of the service-->
+<h1>{{.payload.Sname}}</h1>
+ {{range .payload.Operations }}
+         <p>Operation Name: {{.Opname}}</p>
+         <p>Delay: {{.Delay}}</p>
+         <p>Outputs</p>
+        {{range .Outputs }}
+         <p>Tag Value: {{.Tagvalue}}</p>
+         <p>Response:</p>
+          <pre class="pre-scrollable">
+         <p>{{.Response}}</p>
+          </pre>
+        {{end}}
+  {{end}}
+<!--Display the content of the service-->
+<p>Path: {{.payload.Path}}</p>
+
+<!--Embed the footer.html template at this location-->
+{{ template "footer.html" .}}

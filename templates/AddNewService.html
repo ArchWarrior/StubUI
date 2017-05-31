@@ -1,0 +1,110 @@
+<!--Add New Service.html-->
+
+
+
+<!--Embed the header.html template at this location-->
+{{ template "header.html" .}}
+
+<form class="form-horizontal"  action="/service/save" method="post">
+  <fieldset>
+    <legend>Service Details</legend>
+    <div class="form-group">
+      <label for="InputEndpoint" class="col-lg-2 control-label">End Point</label>
+      <div class="col-lg-10">
+        <input type="text" class="form-control" id="InputEndpoint" name="InputEndpoint" placeholder="Enter Endpoint">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="InputServiceName" class="col-lg-2 control-label">Service Name</label>
+      <div class="col-lg-10">
+        <input type="text" class="form-control" id="InputServiceName" name="InputServiceName" placeholder="Enter Service Name">
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label for="InputOperationName" class="col-lg-2 control-label">Operation Name
+    <h6><p class="text-muted">(in case of JSON response this will be validated from URI)</p></h6></label>
+     <div class="col-lg-10">
+        <input type="text" class="form-control" id="InputOperationName" name="InputOperationName" placeholder="Enter Operation Name">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="InputDelay" class="col-lg-2 control-label">Delay</label>
+      <div class="col-lg-10">
+        <input type="text" class="form-control" id="InputDelay"  name="InputDelay" placeholder="Delay in seconds">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="InputTag" class="col-lg-2 control-label">Request Map</label>
+      <div class="col-lg-10">
+        <input type="text" class="form-control" id="InputTag" name="InputTag" placeholder="Choose a unique value from the request">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="InputResponse" class="col-lg-2 control-label">Expected Response:</label>
+      <div class="col-lg-10">
+		<textarea name="response" style="height: 500px; width: 500px;"></textarea> 
+      </div>
+    </div>
+   <!--   <div class="form-group">
+      <label for="inputRequestXml" class="col-lg-2 control-label">Request XML</label>
+      <div class="col-lg-10">
+        <input type="file" class="form-control" id="inputRequestXml" placeholder="Please select the Request XML file">
+      </div>
+      <label for="inputResponseXml" class="col-lg-2 control-label">Response XML</label>
+      <div class="col-lg-10">
+        <input type="file" class="form-control" id="inputResponseXml" placeholder="Please select the Response XML file">
+      </div>
+    </div>
+    -->
+      <div class="form-group">
+      <label class="col-lg-2 control-label">Response Type</label>
+      <div class="col-lg-10">
+        <div class="radio">
+          <label>
+            <input type="radio" name="responseType" id="xml" value="text/xml" checked="checked">
+            XML
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input type="radio" name="responseType" id="json" value="text/json">
+            JSON
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-lg-2 control-label">Is this a Static Response</label>
+      <div class="col-lg-10">
+        <div class="radio">
+          <label>
+            <input type="radio" name="static" id="yesStatic" value="yes">
+            Yes
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input type="radio" name="static" id="NoStatic" value="No" checked="checked">
+            No
+          </label>
+        </div>
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <div class="col-lg-10 col-lg-offset-2">
+        <button type="reset" class="btn btn-default">Cancel</button>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+  </fieldset>
+</form>
+
+<!--Embed the footer.html template at this location-->
+{{ template "footer.html" .}}
+
+ 
+			 
+            
+					

@@ -1,0 +1,28 @@
+<!--index.html-->
+<!--Embed the header.html template at this location-->
+{{ template "header.html" .}}
+ <!--Loop over the `payload` variable, which is the list of service-->
+  {{range .payload }}
+    <!--Create the link for the article based on its ID-->
+    
+    <div class="panel panel-warning">
+     <div class="panel-heading">
+       <a href="/service/view/{{.ID}}">
+      <!--Display the Name of the service -->
+       <h1 class="panel-title"><strong>{{.Sname}}</strong></h1>
+      
+    </a>
+    </div>
+     <div class="panel-body">
+       <!--Display the Path of the service-->
+        {{range .Operations }}
+          <p>{{.Opname}}</p>
+            <p>{{end}}</p>
+          </div>
+          </div>
+  {{end}}
+ 
+ 
+ 
+<!--Embed the footer.html template at this location-->
+{{ template "footer.html" .}}
